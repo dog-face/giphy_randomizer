@@ -16,7 +16,9 @@ class giphy_war_machine(object):
 
     def init_webdriver(self):
         options = webdriver.firefox.options.Options()
-        options.add_argument('--headless')
+        # options.add_argument('--headless')
+        # Did not work with headless on the server.
+        # Instead I used pyvirtualdisplay and removed this option
         return webdriver.Firefox(
             firefox_options=options
             #log_path='{}/geckodriver.log'.format(LOG_PATH)
