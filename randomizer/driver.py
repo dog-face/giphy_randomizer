@@ -1,4 +1,6 @@
 from selenium import webdriver
+from selenium.webdriver.support.ui import Select
+
 
 LOG_PATH = '/Users/noahvito'
 LOGIN_URL = 'https://{}.slack.com/signin'
@@ -27,6 +29,7 @@ class giphy_war_machine(object):
     def run(self):
         self.login()
         self.disable_giphy_previews()
+        self.check_ratings()
         self.driver.quit()
         print 'DONE!'
 
@@ -40,6 +43,12 @@ class giphy_war_machine(object):
 
         continue_button = self.driver.find_element_by_id('signin_btn')
         continue_button.click()
+
+    def check_ratings(self):
+        ratings_field = Select(self.driver.find_element_by_name('rating'))
+        ratings_field.first_selected_option.get_attribute("value")
+        option = ratings_field.first_selected_option
+        print 'current rating: {}'.format(option.text)
 
     def disable_giphy_previews(self):
         print 'checking if previews are disabled...'
