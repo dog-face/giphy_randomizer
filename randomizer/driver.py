@@ -28,8 +28,10 @@ class giphy_war_machine(object):
         self.login()
         self.disable_giphy_previews()
         self.driver.quit()
+        print 'DONE!'
 
     def login(self):
+        print 'logging in...'
         self.driver.get(self.login_url)
         email_field = self.driver.find_element_by_id('email')
         email_field.send_keys(self.email)
@@ -40,11 +42,13 @@ class giphy_war_machine(object):
         continue_button.click()
 
     def disable_giphy_previews(self):
+        print 'checking if previews are disabled...'
         self.driver.get(self.giphy_url)
         previews_checkbox = self.driver.find_element_by_name('previews_enabled')
         save_button = self.driver.find_element_by_id('add_integration')
         if previews_checkbox.is_selected():
             previews_checkbox.click()
+            print 'previews are now disabled!'
         else:
             print 'previews already disabled!'
         save_button.click()
