@@ -3,3 +3,4 @@ password.txt
 env/
 .idea/
 geckodriver.log
+**.pyc
