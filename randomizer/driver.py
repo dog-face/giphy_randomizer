@@ -25,6 +25,7 @@ class giphy_war_machine(object):
     def run(self):
         self.login()
         self.disable_giphy_previews()
+        self.driver.quit()
 
     def login(self):
         self.driver.get(self.login_url)
