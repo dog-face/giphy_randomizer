@@ -1,4 +1,5 @@
 password.txt
 .env/
+env/
 .idea/
 geckodriver.log
