@@ -1,0 +1,4 @@
+password.txt
+.env/
+.idea/
+geckodriver.log
