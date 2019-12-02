@@ -34,7 +34,6 @@ class giphy_war_machine(object):
         print 'DONE!'
 
     def login(self):
-        import ipdb; ipdb.set_trace()
         print 'logging in...'
         self.driver.get(self.login_url)
         email_field = self.driver.find_element_by_id('email')
