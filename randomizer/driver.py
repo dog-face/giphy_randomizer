@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import Select
 
 
 LOG_PATH = '/Users/noahvito'
-LOGIN_URL = 'https://{}.slack.com/signin/?no_sso=1'
+LOGIN_URL = 'https://{}.slack.com?no_sso=1'
 GIPHY_URL = 'https://{}.slack.com/services/417362304373'
 
 
@@ -34,6 +34,7 @@ class giphy_war_machine(object):
         print 'DONE!'
 
     def login(self):
+        import ipdb; ipdb.set_trace()
         print 'logging in...'
         self.driver.get(self.login_url)
         email_field = self.driver.find_element_by_id('email')
