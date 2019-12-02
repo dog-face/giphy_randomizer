@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import Select
 
 
 LOG_PATH = '/Users/noahvito'
-LOGIN_URL = 'https://{}.slack.com/signin'
+LOGIN_URL = 'https://{}.slack.com/signin/?no_sso=1'
 GIPHY_URL = 'https://{}.slack.com/services/417362304373'
 
 
