@@ -27,10 +27,12 @@ class giphy_war_machine(object):
         )
 
     def run(self):
-        self.login()
-        self.disable_giphy_previews()
-        self.check_ratings()
-        self.driver.quit()
+        try:
+            self.login()
+            self.disable_giphy_previews()
+            self.check_ratings()
+        finally:
+            self.driver.quit()
         print 'DONE!'
 
     def login(self):
